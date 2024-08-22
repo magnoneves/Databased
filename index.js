@@ -9,11 +9,11 @@ const port = process.env.PORT || 3000;
 
 // Configuração da conexão com o banco de dados
 const mysqli = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT || 3306, // Porta padrão para MySQL é 3306
+  host: process.env.DB_HOST, // Deve ser 'mysql.railway.internal'
+  user: process.env.DB_USER, // Usuário do banco de dados
+  password: process.env.DB_PASSWORD, // Senha do banco de dados
+  database: process.env.DB_NAME, // Nome do banco de dados
+  port: process.env.DB_PORT || 3306, // Porta padrão do MySQL
 });
 
 app.use(express.urlencoded({ extended: true }));
